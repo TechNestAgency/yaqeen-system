@@ -14,7 +14,7 @@
             <!-- Top bar left -->
             <div class="navbar-expand-lg ms-auto ms-xl-0">
 
-                <img src="{{asset('logo.jpg')}}" style="width: 30%;float: right" >
+                <img src="{{asset('logo_png.png')}}" style="width: 30%;float: right" >
                 <!-- Topbar menu END -->
             </div>
             <!-- Top bar left END -->
