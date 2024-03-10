@@ -27,7 +27,7 @@
                             <h5 class="card-title">{{$course->course_name}}</h5>
                             <p class="card-text">{{$course->student->user_name}}</p>
                             <a href="{{route('teacher.course.lessons',['month'=>1,'course_id'=>$course->id])}}" class="btn btn-primary">دروس هذه الدورة</a>
-                            <a href="{{route('delete.teacher.course',$course->id)}}" class="btn btn-danger">حذف !!!!!</a>
+                            <a href="#" class="btn btn-danger deleteButton" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-url="{{route('delete.teacher.course',$course->id)}}">حذف !!!!!</a>
                         </div>
                     </div>
                 </div>
@@ -38,6 +38,36 @@
 
     </div>
     <!-- Counter boxes END -->
+    <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteConfirmationModalLabel">تأكيد الحذف </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    هل تريد الحذف بالتأكيد ؟؟
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">الغاء</button>
+                    <a id="confirmDeleteButton" class="btn btn-danger">حذف</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var deleteButtons = document.querySelectorAll('.deleteButton');
+            var confirmDeleteButton = document.getElementById('confirmDeleteButton');
+            var deleteConfirmationModal = document.getElementById('deleteConfirmationModal');
+
+            deleteButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    confirmDeleteButton.href = button.dataset.url;
+                });
+            });
+        });
+    </script>
     <!-- Modal -->
     <div class="modal fade" id="addCourseModal" tabindex="-1" aria-labelledby="addCourseModalLabel" aria-hidden="true" style="direction: rtl">
         <div class="modal-dialog">

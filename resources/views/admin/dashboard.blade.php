@@ -111,9 +111,45 @@
 
             </div>
             <!-- Counter boxes END -->
+            <div class="row g-4 mb-4" style="direction: rtl">
+                <!-- Counter item -->
+                <div class="col-md-6 col-xxl-3">
+                    <div class="card card-body bg-warning bg-opacity-15 p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!-- Digit -->
+                            <div>
+                                <h2 class="mb-0 fw-bold">{{\App\Models\TeacherStudents::where('teacher_id',auth()->user()->id)->count()}}</h2>
+                                <span class="mb-0 h5 fw-light">عدد طلابك</span>
+                            </div>
+                            <!-- Icon -->
+                            <div class="icon-lg rounded-circle bg-warning text-white mb-0"><i class="fas fa-users"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row g-4 mb-4" style="direction: rtl">
+                <!-- Counter item -->
+                <div class="col-md-6 col-xxl-3">
+                    <div class="card card-body bg-warning bg-opacity-15 p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!-- Digit -->
+                            <div>
+                                <h2 class="mb-0 fw-bold">{{\App\Models\Courses::where('teacher_id',auth()->user()->id)->count()}}</h2>
+                                <span class="mb-0 h5 fw-light">عدد دوراتك</span>
+                            </div>
+                            <!-- Icon -->
+                            <div class="icon-lg rounded-circle bg-warning text-white mb-0"><i class="fas fa-laptop"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         @endif
     </div>
     <!-- Counter boxes END -->
 
-    </div>
+
+
 @endsection
