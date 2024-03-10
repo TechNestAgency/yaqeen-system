@@ -67,7 +67,7 @@
                                    <tr>
                                        <td class="text-center">{{$student->user_name}}</td>
                                        <td class="text-center">
-                                           <a href="{{route('teacher.remove.student',['teacher_id'=>$teacher->id,'student_id'=>$student->id])}}" class="btn btn-sm btn-danger mb-0">حذف</a>
+                                           <a href="#" class="btn btn-sm btn-danger mb-0 deleteButton" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-url="{{route('teacher.remove.student',['teacher_id'=>$teacher->id,'student_id'=>$student->id])}}">حذف</a>
                                        </td>
                                    </tr>
                                @endforeach
@@ -81,6 +81,24 @@
 
         </div>
         <!-- Card END -->
+    </div>
+
+    <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteConfirmationModalLabel">تأكيد الحذف </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    هل تريد الحذف بالتأكيد ؟؟
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">الغاء</button>
+                    <a id="confirmDeleteButton" class="btn btn-danger">حذف</a>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="modal fade" id="addStudentModal" tabindex="-1" aria-labelledby="addStudentModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -106,6 +124,20 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var deleteButtons = document.querySelectorAll('.deleteButton');
+            var confirmDeleteButton = document.getElementById('confirmDeleteButton');
+            var deleteConfirmationModal = document.getElementById('deleteConfirmationModal');
+
+            deleteButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    confirmDeleteButton.href = button.dataset.url;
+                });
+            });
+        });
+    </script>
 
     <!-- Page main content END -->
 

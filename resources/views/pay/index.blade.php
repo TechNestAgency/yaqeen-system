@@ -29,7 +29,7 @@
             </div>
         </div>
     </div>
-    <script src="https://www.paypal.com/sdk/js?client-id=AQqdMLWwFl4b8evTmnl2yBBfTKpsk2Z8PIkQLXTwAOitqNAQYLhw0fM3CsX_cRal3n-wvrgSsmoJC-NV&components=buttons&currency={{$currency}}"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=ASeD-03sWG_P6Z6jjRt_swDo9BNeUNheMvV4dBgStoT-3-NtR2YezHwni3eKI7oxoWAqLyMPGlku4SgZ&components=buttons&currency={{$currency}}"></script>
     <script>
         paypal.Buttons({
             createOrder: function(data, actions) {
