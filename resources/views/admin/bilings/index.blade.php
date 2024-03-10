@@ -105,7 +105,7 @@
                         @endphp
                         <tr>
                             <td class="text-center">
-                                <a target="_blank" href="https://wa.me/{{ $billing->student->whatsapp_number }}?text={{ urlencode('Hello From Ele7san Academy this is your billing , please click the link to pay: ' . url(route('pay', ['student_id' => $billing->student->id, 'month' => $month, 'amount' => $billing->total_amount, 'currency' => $student->currency], true))) }}">
+                                <a target="_blank" href="https://wa.me/{{ $student->whatsapp_number }}?text={{ urlencode('Hello From Ele7san Academy this is your billing , please click the link to pay: ' . url(route('pay', ['student_id' => $billing->student->id, 'month' => $month, 'amount' => $billing->total_amount, 'currency' => $student->currency], true))) }}">
                                     <img src="{{asset('whatsapp.png')}}" style="width: 40px">
                                 </a>
                             </td>
