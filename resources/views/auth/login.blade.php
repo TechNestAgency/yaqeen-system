@@ -23,7 +23,17 @@
 
     <!-- Theme CSS -->
     <link id="style-switch" rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
 
+    <style>
+        .almarai-bold {
+            font-family: "Almarai", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+    </style>
 </head>
 
 <body>
@@ -35,11 +45,14 @@
         <div class="container-fluid">
             <div class="row">
                 <!-- Right -->
-                <div class="col-12 col-lg-6 m-auto">
+                <div class="col-12 col-lg-4 m-auto">
                     <div class="row my-5">
                         <div class="col-sm-6 col-xl-6 m-auto">
                             <!-- Title -->
-                            <h1 class="fs-2 text-center">تسجيل الدخول</h1>
+                            <div class="text-center">
+                                <img src="{{asset('logo.jpg')}}" style="width: 50%">
+                            </div>
+                            <h1 class="fs-2 text-center almarai-bold">تسجيل الدخول</h1>
                             @if(session('error'))
                             <div class="alert alert-danger mt-2">{{ session('error') }}</div>
                             @endif
@@ -48,10 +61,9 @@
                                 @csrf
                                 <!-- Email -->
                                 <div class="mb-4">
-                                    <label for="exampleInputEmail1" class="form-label">البريد الالكتروني</label>
+                                    <label for="exampleInputEmail1" class="form-label almarai-bold">البريد الالكتروني</label>
                                     <div class="input-group input-group-lg">
-                                        <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="bi bi-envelope-fill"></i></span>
-                                        <input type="email" name="email" class="form-control border-0 bg-light rounded-end ps-1" placeholder="البريد الالكتروني" id="exampleInputEmail1">
+                                        <input type="email" name="email" class="form-control border-0 bg-light rounded-end ps-1 almarai-bold" placeholder="البريد الالكتروني" id="exampleInputEmail1">
                                     </div>
                                     @error('email')
                                     <div class="alert alert-danger mt-2">{{ $message }}</div>
@@ -59,10 +71,9 @@
                                 </div>
                                 <!-- Password -->
                                 <div class="mb-4">
-                                    <label for="inputPassword5" class="form-label">الرقم السري</label>
+                                    <label for="inputPassword5" class="form-label almarai-bold">الرقم السري</label>
                                     <div class="input-group input-group-lg">
-                                        <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="fas fa-lock"></i></span>
-                                        <input type="password" name="password" class="form-control border-0 bg-light rounded-end ps-1" placeholder="الرقم السري" id="inputPassword5">
+                                        <input type="password" name="password" class="form-control border-0 bg-light rounded-end ps-1 almarai-bold" placeholder="الرقم السري" id="inputPassword5">
                                     </div>
                                     @error('password')
                                     <div class="alert alert-danger mt-2">{{ $message }}</div>
@@ -72,7 +83,7 @@
                                 <!-- Button -->
                                 <div class="align-items-center mt-0">
                                     <div class="d-grid">
-                                        <button class="btn btn-primary mb-0" type="submit">تسجيل الدخول</button>
+                                        <button class="btn btn-primary mb-0 almarai-bold" type="submit">تسجيل الدخول</button>
                                     </div>
                                 </div>
                             </form>

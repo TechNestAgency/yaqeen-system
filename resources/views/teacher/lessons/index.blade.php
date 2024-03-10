@@ -19,7 +19,7 @@
         </div>
 
         <!-- Months -->
-        <div class="row">
+        <div class="row" style="margin-top: 30px">
             <div class="col-12 text-center">
                 <a href="{{route('course.lessons',['month'=>1,'course_id'=>$course_id])}}" @if($month == '1') class="btn btn-secondary disabled" @else class="btn btn-primary" @endif>يناير</a>
                 <a href="{{route('course.lessons',['month'=>2,'course_id'=>$course_id])}}" @if($month == '2') class="btn btn-secondary disabled" @else class="btn btn-primary" @endif>فبراير</a>

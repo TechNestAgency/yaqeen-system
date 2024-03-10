@@ -73,13 +73,13 @@
                                                                  ->whereYear('created_at', now()->year)
                                                                  ->distinct('student_id')->count('student_id');
                 @endphp
-                <div class="col-6">
+                <div class="col-5">
                     <div class="card fancy-card text-center" style="background-color: rgba(168,255,153,0.65)">
                         <h5> المدفوعة</h5>
                         <h4>{{$uniqueStudentBillings_paid}}</h4>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-5">
                     <a href="{{route('billings.index',$month)}}">
                         <div class="card fancy-card text-center" >
                             <h5>الغير مدفوعة</h5>
