@@ -76,14 +76,14 @@
                 <div class="col-5">
                    <a href="{{route('paid.billings',$month)}}">
                        <div class="card fancy-card text-center" >
-                           <h6> المدفوعة</h6>
+                           <p> المدفوعة</p>
                            <h4>{{$uniqueStudentBillings_paid}}</h4>
                        </div>
                    </a>
                 </div>
                 <div class="col-5">
                     <div class="card fancy-card text-center" style="background-color: rgba(168,255,153,0.65)">
-                        <h6>الغير مدفوعة</h6>
+                        <p>الغير مدفوعة</p>
                         <h4>{{$currentMonthBillings_notpaid}}</h4>
 
                     </div>

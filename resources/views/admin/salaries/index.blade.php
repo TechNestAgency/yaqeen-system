@@ -68,9 +68,9 @@
             <form action="{{route('salaries.amount',['month'=>$month])}}">
                 @csrf
                 <div class="row m-3" style="direction: rtl">
-                    <div class="col-10">
+                    <div class="col-6">
                         <div class="form-group">
-                            <input type="number" name="amount" class="form-control" placeholder="حدد سعر الساعة لحساب المرتب">
+                            <input type="number" name="amount" class="form-control" placeholder=" سعر الساعة">
                         </div>
                     </div>
                     <div class="col-2">
@@ -84,8 +84,8 @@
                     <thead>
                     <tr>
                         <th scope="col" class="text-center">الراتب</th>
-                        <th scope="col" class="text-center">اجمالي ساعات الشهر</th>
-                        <th scope="col" class="text-center">اسم المعلم</th>
+                        <th scope="col" class="text-center">اجمالي ساعات</th>
+                        <th scope="col" class="text-center"> المعلم</th>
                     </tr>
                     </thead>
                     <tbody>
