@@ -57,6 +57,20 @@
                         </div>
                     </div>
                 </div>
+                <!-- Counter item -->
+                <div class="col-md-6 col-xxl-3">
+                    <div class="card card-body bg-primary bg-opacity-10 p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!-- Digit -->
+                            <div>
+                                <h2 class="mb-0 fw-bold">{{\App\Models\Billings::whereMonth('created_at',\Carbon\Carbon::now()->month)->where('currency','NZD')->sum('amount')}}</h2>
+                                <span class="mb-0 h5 fw-light">دولار نيوزلندي</span>
+                            </div>
+                            <!-- Icon -->
+                            <div class="icon-lg rounded-circle bg-primary text-white mb-0"><i class="fas fa-euro-sign"></i></div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Counter item -->
                 <div class="col-md-6 col-xxl-3">
