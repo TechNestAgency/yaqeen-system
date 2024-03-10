@@ -24,6 +24,7 @@ class User extends Authenticatable
         'eur' => 'EUR',
         'gbp' => 'GBP',
         'nzd' => 'NZD',
+        'cad' => 'CAD',
     ];
 
    protected $fillable = ['user_name', 'email', 'password','user_type','whatsapp_number','hour_price','currency'];
