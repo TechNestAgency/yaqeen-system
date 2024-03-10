@@ -26,6 +26,10 @@
     <!-- Theme CSS -->
     <link id="style-switch" rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+
     <style>
         @charset "UTF-8";
         /*!
@@ -111,7 +115,7 @@
 
         body {
             margin: 0;
-            font-family: var(--bs-body-font-family);
+            font-family: "Almarai", sans-serif;
             font-size: var(--bs-body-font-size);
             font-weight: var(--bs-body-font-weight);
             line-height: var(--bs-body-line-height);
@@ -145,15 +149,18 @@
 
         h1, .h1 {
             font-size: calc(1.40625rem + 1.875vw);
+            font-family: "Almarai", sans-serif;
         }
         @media (min-width: 1200px) {
             h1, .h1 {
                 font-size: 2.8125rem;
+                font-family: "Almarai", sans-serif;
             }
         }
 
         h2, .h2 {
             font-size: calc(1.359375rem + 1.3125vw);
+            font-family: "Almarai", sans-serif;
         }
         @media (min-width: 1200px) {
             h2, .h2 {
@@ -163,6 +170,7 @@
 
         h3, .h3 {
             font-size: calc(1.3125rem + 0.75vw);
+            font-family: "Almarai", sans-serif;
         }
         @media (min-width: 1200px) {
             h3, .h3 {
@@ -172,6 +180,7 @@
 
         h4, .h4 {
             font-size: calc(1.2890625rem + 0.46875vw);
+            font-family: "Almarai", sans-serif;
         }
         @media (min-width: 1200px) {
             h4, .h4 {
@@ -181,20 +190,24 @@
 
         h5, .h5 {
             font-size: calc(1.25625rem + 0.075vw);
+            font-family: "Almarai", sans-serif;
         }
         @media (min-width: 1200px) {
             h5, .h5 {
                 font-size: 1.3125rem;
+                font-family: "Almarai", sans-serif;
             }
         }
 
         h6, .h6 {
             font-size: 0.9375rem;
+            font-family: "Almarai", sans-serif;
         }
 
         p {
             margin-top: 0;
             margin-bottom: 1rem;
+            font-family: "Almarai", sans-serif;
         }
 
         abbr[title],
