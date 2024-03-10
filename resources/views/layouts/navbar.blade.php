@@ -1,4 +1,15 @@
 <!-- Top bar START -->
+<style>
+    .logo {
+        width: 30%;
+    }
+
+    @media (min-width: 992px) { /* for desktop screens with a minimum width of 992px */
+        .logo {
+            width: 5%; /* adjust this value as needed */
+        }
+    }
+</style>
 <nav class="top-bar navbar-light border-bottom py-0 py-xl-3">
     <div class="container-fluid p-0">
         <div class="d-flex align-items-center w-100">
@@ -13,8 +24,7 @@
 
             <!-- Top bar left -->
             <div class="navbar-expand-lg ms-auto ms-xl-0">
-
-                <img src="{{asset('logo_png.png')}}" style="width: 30%;float: right" >
+                <img src="{{asset('logo_png.png')}}" class="logo" style="float: right" >
                 <!-- Topbar menu END -->
             </div>
             <!-- Top bar left END -->
