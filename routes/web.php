@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('login-page',[App\Http\Controllers\Controller::class,'loginPage'])->middleware('guest')->name('login.page');
 Route::post('login',[App\Http\Controllers\Controller::class,'login'])->name('login');
 Route::get('pay/{student_id}/{month}/{amount}/{currency}',[\App\Http\Controllers\Admin\Billings\BillingsController::class,'pay'])->name('pay');
+Route::get('success/{month}',[\App\Http\Controllers\Admin\Billings\BillingsController::class,'success'])->name('success');
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('logout',[\App\Http\Controllers\Controller::class,'logout'])->name('logout');
     Route::get('/', [\App\Http\Controllers\Admin\Dashboard\DashboardController::class,'index'])->name('admin.dashboard');
@@ -52,7 +54,6 @@ Route::group(['middleware' => 'auth'], function () {
     //billings
     Route::get('billings/{month}', [\App\Http\Controllers\Admin\Billings\BillingsController::class,'index'])->name('billings.index');
     Route::get('paid-billings/{month}', [\App\Http\Controllers\Admin\Billings\BillingsController::class,'paidBillings'])->name('paid.billings');
-    Route::get('success/{month}',[\App\Http\Controllers\Admin\Billings\BillingsController::class,'success'])->name('success');
     Route::get('salaries/{month}',[\App\Http\Controllers\Admin\Billings\BillingsController::class,'salaries'])->name('salaries.index');
     Route::get('salaries-amount/{month}',[\App\Http\Controllers\Admin\Billings\BillingsController::class,'salariesAmount'])->name('salaries.amount');
 });
