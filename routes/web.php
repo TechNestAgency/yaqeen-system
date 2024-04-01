@@ -15,19 +15,21 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('courses', [\App\Http\Controllers\Teacher\Courses\CoursesController::class,'index'])->name('courses.index');
     Route::get('courses/create', [\App\Http\Controllers\Teacher\Courses\CoursesController::class,'create'])->name('courses.create');
     Route::post('courses/store', [\App\Http\Controllers\Teacher\Courses\CoursesController::class,'store'])->name('courses.store');
-    Route::get('courses/edit/{id}', [\App\Http\Controllers\Teacher\Courses\CoursesController::class,'edit'])->name('courses.edit');
-    Route::post('courses/update/{id}', [\App\Http\Controllers\Teacher\Courses\CoursesController::class,'update'])->name('courses.update');
-    Route::get('courses/delete/{id}', [\App\Http\Controllers\Teacher\Courses\CoursesController::class,'delete'])->name('courses.delete');
 
     //lessons
     Route::get('course-lessons/{month}/{course_id}', [\App\Http\Controllers\Teacher\Lessons\LessonsController::class,'index'])->name('course.lessons');
     Route::get('lessons/create/{month}/{course_id}', [\App\Http\Controllers\Teacher\Lessons\LessonsController::class,'create'])->name('lessons.create');
     Route::post('course/lessons/store/{month}/{course_id}', [\App\Http\Controllers\Teacher\Lessons\LessonsController::class,'store'])->name('course.lessons.store');
-    Route::get('lessons/edit/{id}', [\App\Http\Controllers\Teacher\Lessons\LessonsController::class,'edit'])->name('lessons.edit');
-    Route::post('lessons/update/{id}', [\App\Http\Controllers\Teacher\Lessons\LessonsController::class,'update'])->name('lessons.update');
-    Route::get('lessons/delete/{id}', [\App\Http\Controllers\Teacher\Lessons\LessonsController::class,'delete'])->name('lessons.delete');
 
     Route::group(['middleware'=>'admin'],function (){
+
+        Route::get('courses/edit/{id}', [\App\Http\Controllers\Teacher\Courses\CoursesController::class,'edit'])->name('courses.edit');
+        Route::post('courses/update/{id}', [\App\Http\Controllers\Teacher\Courses\CoursesController::class,'update'])->name('courses.update');
+        Route::get('courses/delete/{id}', [\App\Http\Controllers\Teacher\Courses\CoursesController::class,'delete'])->name('courses.delete');
+
+        Route::get('lessons/edit/{id}', [\App\Http\Controllers\Teacher\Lessons\LessonsController::class,'edit'])->name('lessons.edit');
+        Route::post('lessons/update/{id}', [\App\Http\Controllers\Teacher\Lessons\LessonsController::class,'update'])->name('lessons.update');
+        Route::get('lessons/delete/{id}', [\App\Http\Controllers\Teacher\Lessons\LessonsController::class,'delete'])->name('lessons.delete');
 
         Route::resource('students', \App\Http\Controllers\Admin\Students\StudentsController::class);
         Route::put('student/update/{id}', [\App\Http\Controllers\Admin\Students\StudentsController::class,'update'])->name('student.update');
