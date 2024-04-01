@@ -71,6 +71,10 @@ class TeachersController extends Controller
     public function delete($id)
     {
         $user = User::find($id);
+        $teacher_students = TeacherStudents::where('teacher_id', $id)->delete();
+        $courses = Courses::where('teacher_id', $id)->delete();
+        $lessons = \App\Models\Lessons::where('teacher_id', $id)->delete();
+        $billings = Billings::where('teacher_id', $id)->delete();
         $user->delete();
         return redirect()->route('teachers.index');
     }
