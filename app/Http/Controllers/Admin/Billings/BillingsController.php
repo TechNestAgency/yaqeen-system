@@ -27,7 +27,9 @@ class BillingsController extends Controller
 
     public function success(Request $request,$month)
     {
+    
         $userId = $request->input('student_id');
+        
         Billings::where('student_id',$userId)->whereMonth('created_at',$month)->update(['is_paid'=>1]);
         return view('pay.success');
     }

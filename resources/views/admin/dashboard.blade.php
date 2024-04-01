@@ -1,6 +1,7 @@
 @extends('layouts.index')
 
 @section('content')
+@php dd(auth()->user()); @endphp
     <div class="page-content-wrapper border">
 
         <!-- Title -->

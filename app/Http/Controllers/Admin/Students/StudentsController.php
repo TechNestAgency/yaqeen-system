@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 
 class StudentsController extends Controller
-{
+{z
     public function index()
     {
         $students = User::where('user_type', User::USER_TYPE['student'])->get();
