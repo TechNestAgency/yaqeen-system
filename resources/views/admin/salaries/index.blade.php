@@ -98,7 +98,7 @@
                                 {{ isset($amount) ? $amount * $salary->total_hours .' '. 'جنيه' : 'حدد سعر الساعة' }}
                             </td>
                             <td class="text-center"> {{$salary->total_hours}} ساعة</td>
-                            <td class="text-center">{{$teacher->user_name ?? ''}}</td>
+                            <td class="text-center">{{$teacher->user_name}}</td>
                         </tr>
                     @endforeach
                     </tbody>

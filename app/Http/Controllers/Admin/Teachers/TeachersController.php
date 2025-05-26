@@ -130,6 +130,7 @@ class TeachersController extends Controller
     {
         $lessons = \App\Models\Lessons::where('course_id', $course_id)
             ->whereMonth('created_at', $month)
+            ->whereYear('created_at', now()->year)
             ->get();
         return view('admin.teachers.lessons', compact('lessons','month','course_id'));
     }

@@ -66,11 +66,11 @@
                 @php
                     $currentMonthBillings_notpaid = \App\Models\Billings::where('is_paid',0)
                                                                  ->whereMonth('created_at', $month)
-                                                                 ->whereYear('created_at', now()->year)
+                                                                 ->where('year', 2025)
                                                                  ->distinct('student_id')->count('student_id');
                     $uniqueStudentBillings_paid = \App\Models\Billings::where('is_paid',1)
                                                                  ->whereMonth('created_at', $month)
-                                                                 ->whereYear('created_at', now()->year)
+                                                                 ->where('year', 2025)
                                                                  ->distinct('student_id')->count('student_id');
                 @endphp
                 <div class="col-5">
@@ -95,7 +95,10 @@
                     <thead>
                     <tr>
                         <th scope="col" class="text-center">ارسال واتساب</th>
-                        <th scope="col" class="text-center">الطالب</th>
+                   <th scope="col" class="text-center">تم الدفع</th>
+                                           <th scope="col" class="text-center">الطالب</th>
+
+
                     </tr>
                     </thead>
                     <tbody>
@@ -103,14 +106,21 @@
                         @php
                           $student = \App\Models\User::find($billing->student_id);
                         @endphp
+                        @if(!is_null($student))
                         <tr>
                             <td class="text-center">
-                                <a target="_blank" href="https://wa.me/{{ $student->whatsapp_number }}?text={{ urlencode('Hello From Ele7san Academy this is your billing , please click the link to pay: ' . url(route('pay', ['student_id' => $billing->student->id, 'month' => $month, 'amount' => $billing->total_amount, 'currency' => $student->currency], true))) }}">
+                                <a target="_blank" href="https://wa.me/{{ $student->whatsapp_number }}?text={{ urlencode('Hello From Tarteel Academy this is your billing , please click the link to pay: ' . url(route('pay', ['student_id' => $billing->student->id, 'month' => $month, 'amount' => $billing->total_amount, 'currency' => $student->currency], true))) }}">
                                     <img src="{{asset('whatsapp.png')}}" style="width: 40px">
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <a href="javascript:void(0);" onclick="confirmPayment('{{route('pay.bill',['student_id'=>$billing->student_id,'month'=>$month])}}')">
+                                    <img src="{{asset('accept.png')}}" style="width: 40px">
                                 </a>
                             </td>
                             <td class="text-center">{{ $billing->student->user_name }}<br>{{ $billing->total_amount .' '. $billing->student->currency}} </td>
                         </tr>
+                        @endif
                     @endforeach
                     </tbody>
                 </table>
@@ -119,6 +129,22 @@
         <!-- Card END -->
     </div>
     <!-- Page main content END -->
-
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function confirmPayment(url) {
+            Swal.fire({
+                title: 'هل أنت متأكد من تأكيد الدفع؟',
+                text: "بمجرد التأكيد سوف يتم تحديد فاتورة هذا الطالب للشهر الحالي كمدفوعه",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'أنا متأكد'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = url;
+                }
+            })
+        }
+    </script>
 @endsection

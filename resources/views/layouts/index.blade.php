@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <title>أكاديمية الاحسان</title>
-
+    <title> أكاديمية اليقين </title>
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Webestica.com">
-    <meta name="description" content="Eduport- LMS, Education and Course Theme">
+    <meta name="description" content=" أكاديمية اليقين ">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{asset('logo.jpg')}}">
+    <link rel="shortcut icon" href="{{asset('yaqeen.png')}}">
 
     <!-- Google Font -->
     <link rel="preconnect" href="{{asset('https://fonts.googleapis.com')}}">
@@ -22,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/vendor/bootstrap-icons/bootstrap-icons.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/vendor/apexcharts/css/apexcharts.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/vendor/overlay-scrollbar/css/OverlayScrollbars.min.css')}}">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Theme CSS -->
     <link id="style-switch" rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">

@@ -1,7 +1,7 @@
 <!-- Sidebar START -->
 <style>
     .bg-red {
-        background-color: #281300 !important;
+        background-color: #05303f !important;
     }
 </style>
 <nav class="navbar sidebar navbar-expand-xl navbar-dark bg-red">
@@ -9,7 +9,7 @@
     <!-- Navbar brand for xl START -->
     <div class="d-flex align-items-center">
         <a class="navbar-brand" href="{{url('/')}}">
-            <h4 style="font-family: Calibri;font-weight: bold;color: whitesmoke">أكاديمية الاحسان</h4>
+            <h4 style="font-family: Calibri;font-weight: bold;color: whitesmoke">أكاديمية اليقين </h4>
         </a>
     </div>
     <!-- Navbar brand for xl END -->
@@ -36,9 +36,10 @@
                     <li class="nav-item"> <a class="nav-link @if(request()->is('billings')) active @endif" href="{{route('billings.index',1)}}"><i class="fas fa-dollar-sign fa-fw me-2"></i>الفواتير </a></li>
                     <li class="nav-item"> <a class="nav-link @if(request()->is('salaries')) active @endif" href="{{route('salaries.index',1)}}"><i class="fas fa-file fa-fw me-2"></i>المرتبات </a></li>
 
+                    <li class="nav-item"> <a class="nav-link @if(request()->is('custom_billings')) active @endif" href="{{route('custom_billings.index')}}"><i class="fas fa-file fa-fw me-2"></i>الفواتيير اليدوية </a></li>
+
 
                     <li class="nav-item"> <a class="nav-link" href="{{route('logout')}}"><i class="fas fa-sign-out-alt me-2"></i>تسجيل الخروج</a></li>
-
 
                 </ul>
                 <!-- Sidebar menu end -->

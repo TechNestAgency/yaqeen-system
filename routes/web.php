@@ -5,8 +5,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('login-page',[App\Http\Controllers\Controller::class,'loginPage'])->middleware('guest')->name('login.page');
 Route::post('login',[App\Http\Controllers\Controller::class,'login'])->name('login');
 Route::get('pay/{student_id}/{month}/{amount}/{currency}',[\App\Http\Controllers\Admin\Billings\BillingsController::class,'pay'])->name('pay');
+Route::get('pay2/{student_id}/{month}/{amount}/{currency}',[\App\Http\Controllers\Admin\Billings\BillingsController::class,'pay2'])->name('pay2');
 Route::get('success/{month}',[\App\Http\Controllers\Admin\Billings\BillingsController::class,'success'])->name('success');
 
+Route::get('/pay_credit/{student_id}/{amount}/{month}',[\App\Http\Controllers\Admin\Billings\BillingsController::class,'showCredit'])->name('credit.show');
+Route::get('/pay_credit_custom/{currency}/{amount}/{month}',[\App\Http\Controllers\Admin\Billings\BillingsController::class,'showCreditCustom'])->name('credit_custom.show');
+Route::get('/handle-payment',[\App\Http\Controllers\Admin\Billings\BillingsController::class,'handlePayment'])->name('payment.handle');
+
+Route::get('pay_bill/{student_id}/{month}',[\App\Http\Controllers\Admin\Billings\CustomBillingsController::class,'payBill'])->name('pay.bill');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('logout',[\App\Http\Controllers\Controller::class,'logout'])->name('logout');
     Route::get('/', [\App\Http\Controllers\Admin\Dashboard\DashboardController::class,'index'])->name('admin.dashboard');
@@ -60,5 +66,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('paid-billings/{month}', [\App\Http\Controllers\Admin\Billings\BillingsController::class,'paidBillings'])->name('paid.billings');
         Route::get('salaries/{month}',[\App\Http\Controllers\Admin\Billings\BillingsController::class,'salaries'])->name('salaries.index');
         Route::get('salaries-amount/{month}',[\App\Http\Controllers\Admin\Billings\BillingsController::class,'salariesAmount'])->name('salaries.amount');
+
+        //custom billings
+        Route::get('custom_billings', [\App\Http\Controllers\Admin\Billings\CustomBillingsController::class,'index'])->name('custom_billings.index');
+        Route::post('custom_billings_store', [\App\Http\Controllers\Admin\Billings\CustomBillingsController::class,'store'])->name('custom_billings.store');
     });
 });

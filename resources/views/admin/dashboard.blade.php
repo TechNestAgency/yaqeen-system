@@ -1,7 +1,6 @@
 @extends('layouts.index')
 
 @section('content')
-@php dd(auth()->user()); @endphp
     <div class="page-content-wrapper border">
 
         <!-- Title -->
@@ -20,7 +19,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <!-- Digit -->
                             <div>
-                                <h2 class="mb-0 fw-bold">{{\App\Models\Billings::whereMonth('created_at',\Carbon\Carbon::now()->month)->where('currency','USD')->sum('amount')}}</h2>
+                                <h2 class="mb-0 fw-bold">{{\App\Models\Billings::whereMonth('created_at',\Carbon\Carbon::now()->month)->whereYear('created_at',\Carbon\Carbon::now()->year)->where('currency','USD')->sum('amount')}}</h2>
                                 <span class="mb-0 h5 fw-light">دولار</span>
                             </div>
                             <!-- Icon -->
@@ -35,7 +34,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <!-- Digit -->
                             <div>
-                                <h2 class=" mb-0 fw-bold">{{\App\Models\Billings::whereMonth('created_at',\Carbon\Carbon::now()->month)->where('currency','GBP')->sum('amount')}}</h2>
+                                <h2 class=" mb-0 fw-bold">{{\App\Models\Billings::whereMonth('created_at',\Carbon\Carbon::now()->month)->whereYear('created_at',\Carbon\Carbon::now()->year)->where('currency','GBP')->sum('amount')}}</h2>
                                 <span class="mb-0 h5 fw-light">جنيه استرليني</span>
                             </div>
                             <!-- Icon -->
@@ -50,7 +49,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <!-- Digit -->
                             <div>
-                                <h2 class="mb-0 fw-bold">{{\App\Models\Billings::whereMonth('created_at',\Carbon\Carbon::now()->month)->where('currency','EUR')->sum('amount')}}</h2>
+                                <h2 class="mb-0 fw-bold">{{\App\Models\Billings::whereMonth('created_at',\Carbon\Carbon::now()->month)->whereYear('created_at',\Carbon\Carbon::now()->year)->where('currency','EUR')->sum('amount')}}</h2>
                                 <span class="mb-0 h5 fw-light">يورو</span>
                             </div>
                             <!-- Icon -->
@@ -64,7 +63,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <!-- Digit -->
                             <div>
-                                <h2 class="mb-0 fw-bold">{{\App\Models\Billings::whereMonth('created_at',\Carbon\Carbon::now()->month)->where('currency','NZD')->sum('amount')}}</h2>
+                                <h2 class="mb-0 fw-bold">{{\App\Models\Billings::whereMonth('created_at',\Carbon\Carbon::now()->month)->whereYear('created_at',\Carbon\Carbon::now()->year)->where('currency','NZD')->sum('amount')}}</h2>
                                 <span class="mb-0 h5 fw-light">دولار نيوزلندي</span>
                             </div>
                             <!-- Icon -->
@@ -78,7 +77,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <!-- Digit -->
                             <div>
-                                <h2 class="mb-0 fw-bold">{{\App\Models\Billings::whereMonth('created_at',\Carbon\Carbon::now()->month)->where('currency','CAD')->sum('amount')}}</h2>
+                                <h2 class="mb-0 fw-bold">{{\App\Models\Billings::whereMonth('created_at',\Carbon\Carbon::now()->month)->whereYear('created_at',\Carbon\Carbon::now()->year)->where('currency','CAD')->sum('amount')}}</h2>
                                 <span class="mb-0 h5 fw-light">دولار كندي</span>
                             </div>
                             <!-- Icon -->
