@@ -50,7 +50,7 @@
                         <div class="col-sm-6 col-xl-6 m-auto">
                             <!-- Title -->
                              <div>
-                                <img src="{{asset('lg.png')}}">
+                                <img src="{{asset('yaqeen.png')}}">
                             </div>
                             <h1 class="fs-2 text-center almarai-bold">تسجيل الدخول</h1>
                             @if(session('error'))
